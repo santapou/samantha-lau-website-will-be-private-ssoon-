@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wave to earth — fan site</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- hey if your seeing this i made the wave using https://getwaves.io and i did what u want i also removed the login page and i hope that
+these comment sections are good enough for you (it wont save) because that makes  sense also i just made it so that you will type the names and comment 
+i just used ai to pretty much describe the band members ( i dont know naything about them ) sorry i also made the album clickable and click thru the correct vspotify link-->
+    <div class="wave-bg">
+        <div class="wave-layer wave1"></div>
+        <div class="wave-layer wave2"></div>
+        <div class="wave-layer wave3"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="nav-logo">w2e</div>
+        <div class="nav-links">
+            <a href="#music">music</a>
+            <a href="#members">members</a>
+            <a href="#lyrics">lyrics</a>
+            <a href="#tour">tour</a>
+            <a href="#fan-thoughts">community</a>
+            <a href="#about">about</a>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">seoul indie trio · since 2019</p>
+            <h1 class="hero-title">
+                <span class="title-line">wave</span>
+                <span class="title-divider">to</span>
+                <span class="title-line">earth</span>
+            </h1>
+            <p class="hero-tagline">we'll be a new wave</p>
+            <a href="#music" class="hero-cta">explore the sound ↓</a>
+        </div>
+        <div class="hero-visual">
+            <div class="spectrum-wrap">
+                <div class="vinyl-record" id="vinyl">
+                    <div class="vinyl-shine"></div>
+                    <div class="vinyl-label"><span>w2e</span></div>
+                </div>
+                <canvas id="spectrumCanvas" width="420" height="420"></canvas>
+                <div class="pulse-ring r1"></div>
+                <div class="pulse-ring r2"></div>
+                <div class="pulse-ring r3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="music">
+            <div class="section-header">
+                <span class="section-tag">discography</span>
+                <h2>the music</h2>
+                <p>A soundscape built from jazz, lo-fi, and soft rock.</p>
+            </div>
+            <div class="albums-grid">
+                <div class="album-card" data-spotify="https://open.spotify.com/track/5UuoeJvdYF87S0OEKgt9Xn?si=d5bae0e4634341cd" onclick="openSpotify(this)">
+                    <div class="album-cover" style="background:#0f3460;">
+                        <img src="images/playwithearth.jfif" alt="play with earth! 0.03 cover" class="album-img">
+                        <div class="album-overlay"><span class="play-icon">▶ Open in Spotify</span></div>
+                    </div>
+                    <div class="album-info">
+                        <h3>play with earth! 0.03</h3>
+                        <span class="album-year">2024</span>
+                        <p>Their most recent EP — sun-drenched grooves and breezy melodies.</p>
+                        <div class="album-tags"><span>lo-fi</span><span>jazz</span><span>indie pop</span></div>
+                    </div>
+                </div>
+                <div class="album-card featured" data-spotify="https://open.spotify.com/album/5T0Gt5JYXh6gEttuB8ujML?si=eevAhnDrQUyT1Ly-LTFCSg" onclick="openSpotify(this)">
+                    <div class="album-cover" style="background:#11998e;">
+                        <img src="images/flawsandall.jfif" alt="0.1 flaws and all. cover" class="album-img">
+                        <div class="album-overlay"><span class="play-icon">▶ Open in Spotify</span></div>
+                    </div>
+                    <div class="album-info">
+                        <h3>0.1 flaws and all.</h3>
+                        <span class="album-year">2023 · debut album</span>
+                        <p>Their beloved debut — raw emotion wrapped in tender, hazy production.</p>
+                        <div class="album-tags"><span>soft rock</span><span>dream pop</span><span>emotional</span></div>
+                    </div>
+                    <div class="featured-badge">fan fave</div>
+                </div>
+                <div class="album-card" data-spotify="https://open.spotify.com/album/5wRgLTi838V7ZE7PXGfCS9?si=ETTrYbP5TkKN8doIh1spyw" onclick="openSpotify(this)">
+                    <div class="album-cover" style="background:#f7971e;">
+                        <img src="images/summerflows.jfif" alt="summer flows 0.02 cover" class="album-img">
+                        <div class="album-overlay"><span class="play-icon">▶ Open in Spotify</span></div>
+                    </div>
+                    <div class="album-info">
+                        <h3>summer flows 0.02</h3>
+                        <span class="album-year">2020</span>
+                        <p>Where it all began — warm summer afternoons bottled in sound.</p>
+                        <div class="album-tags"><span>summer</span><span>lo-fi</span><span>chill</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="members">
+            <div class="section-header">
+                <span class="section-tag">the band</span>
+                <h2>meet the members</h2>
+                <p>Three friends. One sound.</p>
+            </div>
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-photo-wrap">
+                        <div class="member-photo" style="background-image:url('https://pbs.twimg.com/profile_images/1480393930894049285/B_npd5QM_400x400.jpg')"></div>
+                        <div class="member-photo-ring"></div>
+                    </div>
+                    <div class="member-details">
+                        <div class="member-role-badge">Vocals · Guitar</div>
+                        <h3>Daniel Kim</h3>
+                        <p class="member-bio">The dreamy voice behind wave to earth's signature warmth. Daniel writes lyrics that feel like diary entries — intimate, poetic, and real.</p>
+                        <div class="member-meta">
+                            <div class="meta-item"><span class="meta-label">Influences</span><span class="meta-value">Rex Orange County, Tom Misch, Norah Jones</span></div>
+                            <div class="meta-item"><span class="meta-label">Active Since</span><span class="meta-value">2019</span></div>
+                            <div class="meta-item"><span class="meta-label">Personality</span><span class="meta-value">Introspective, gentle, deeply creative</span></div>
+                        </div>
+                        <div class="member-facts">
+                            <h4>fun facts</h4>
+                            <ul>
+                                <li>Grew up listening to jazz records with his father</li>
+                                <li>Writes all lyrics in a worn leather notebook</li>
+                                <li>Favorite season: autumn</li>
+                            </ul>
+                        </div>
+                        <div class="member-achievements"><span>🏆 100M+ Spotify streams</span><span>🎸 Lead songwriter</span></div>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="member-photo-wrap">
+                        <div class="member-photo" style="background-image:url('https://static.wikia.nocookie.net/drama/images/4/46/20047571_001.jpg/revision/latest?cb=20211124075526&path-prefix=es')"></div>
+                        <div class="member-photo-ring"></div>
+                    </div>
+                    <div class="member-details">
+                        <div class="member-role-badge">Bass</div>
+                        <h3>John Cha</h3>
+                        <p class="member-bio">The rhythmic anchor of the band. John's bass lines are subtle but magnetic — the kind you feel more than hear, holding everything together.</p>
+                        <div class="member-meta">
+                            <div class="meta-item"><span class="meta-label">Influences</span><span class="meta-value">Thundercat, Jaco Pastorius, Hiatus Kaiyote</span></div>
+                            <div class="meta-item"><span class="meta-label">Active Since</span><span class="meta-value">2019</span></div>
+                            <div class="meta-item"><span class="meta-label">Personality</span><span class="meta-value">Calm, precise, quietly funny</span></div>
+                        </div>
+                        <div class="member-facts">
+                            <h4>fun facts</h4>
+                            <ul>
+                                <li>Studied jazz bass at university in Seoul</li>
+                                <li>Collects vintage effects pedals</li>
+                                <li>Can name any bassline within 3 seconds</li>
+                            </ul>
+                        </div>
+                        <div class="member-achievements"><span>🎸 Groove architect</span><span>🎵 Jazz trained</span></div>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="member-photo-wrap">
+                        <div class="member-photo" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxwlYWaKpsLlKP8sj-fFWBTiYGcWNhBC9WR_JVxa000PF1P5sYicKVKURVgl9ZrC5-JCgvpjBAcY38B5eIdmidqlr3eCf8iQUY_vXVKm0&s=10')"></div>
+                        <div class="member-photo-ring"></div>
+                    </div>
+                    <div class="member-details">
+                        <div class="member-role-badge">Drums</div>
+                        <h3>Shin Dong-kyu</h3>
+                        <p class="member-bio">The heartbeat of wave to earth. Dong-kyu's drumming is fluid, expressive, and perfectly restrained — never too much, always exactly right.</p>
+                        <div class="member-meta">
+                            <div class="meta-item"><span class="meta-label">Influences</span><span class="meta-value">Questlove, Chris Dave, Makaya McCraven</span></div>
+                            <div class="meta-item"><span class="meta-label">Active Since</span><span class="meta-value">2019</span></div>
+                            <div class="meta-item"><span class="meta-label">Personality</span><span class="meta-value">Energetic offstage, laser-focused on</span></div>
+                        </div>
+                        <div class="member-facts">
+                            <h4>fun facts</h4>
+                            <ul>
+                                <li>Started drumming at age 7</li>
+                                <li>Huge fan of 70s soul and funk records</li>
+                                <li>Has never broken a drumstick mid-show</li>
+                            </ul>
+                        </div>
+                        <div class="member-achievements"><span>🥁 Since age 7</span><span>🎶 Soul-funk trained</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lyrics">
+            <div class="section-header">
+                <span class="section-tag">lyrics</span>
+                <h2>words that linger</h2>
+                <p>Lines that feel like they were written for you.</p>
+            </div>
+            <div class="lyrics-grid">
+                <div class="lyric-card">
+                    <div class="lyric-song">bad</div>
+                    <blockquote>
+                        How could my day be bad<br>
+                        When I'm with you?<br>
+                        You're the only one who makes me laugh<br>
+                        So how could my day be bad?<br>
+                        <em>It's impossible.</em>
+                    </blockquote>
+                    <div class="lyric-album-tag">play with earth! 0.03</div>
+                </div>
+                <div class="lyric-card lyric-featured">
+                    <div class="lyric-song">peach eyes</div>
+                    <blockquote>
+                        Yeah, you're my savior<br>
+                        And I'm your season<br>
+                        I'll give you everything<br>
+                        <em>Even my peach eyes.</em>
+                    </blockquote>
+                    <div class="lyric-album-tag">0.1 flaws and all.</div>
+                </div>
+                <div class="lyric-card">
+                    <div class="lyric-song">seasons</div>
+                    <blockquote>
+                        I can't be your love<br>
+                        'Cause I'm afraid I'll ruin your night<br>
+                        But I'll be your season<br>
+                        <em>I'll be your everything.</em>
+                    </blockquote>
+                    <div class="lyric-album-tag">summer flows 0.02</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about-inner">
+                <div class="section-header left">
+                    <span class="section-tag">about</span>
+                    <h2>the story</h2>
+                </div>
+                <div class="about-text">
+                    <p>Formed in <strong>Seoul, 2019</strong>, wave to earth is Daniel Kim, John Cha, and Shin Dong-kyu — three musicians who stumbled upon something rare: a shared sound that sounds like solitude, warmth, and rain all at once.</p>
+                    <p>Their music draws from <strong>jazz, lo-fi, and soft rock</strong>, wrapped in a production style that feels intentionally imperfect — like a photo taken slightly out of focus, but somehow more beautiful because of it.</p>
+                    <p>They don't chase trends. They make music for Sunday mornings, late nights, and every quiet in between.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat"><span class="stat-number">2019</span><span class="stat-label">Founded</span></div>
+                    <div class="stat"><span class="stat-number">3</span><span class="stat-label">Members</span></div>
+                    <div class="stat"><span class="stat-number">100M+</span><span class="stat-label">Streams</span></div>
+                    <div class="stat"><span class="stat-number">Seoul</span><span class="stat-label">Hometown</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tour">
+            <div class="section-header">
+                <span class="section-tag">live</span>
+                <h2>tour dates</h2>
+                <p>Catch the wave live.</p>
+            </div>
+            <div class="tour-empty">
+                <div class="tour-empty-icon">wave to earth</div>
+                <h3>no upcoming shows</h3>
+                <p>wave to earth hasn't announced any tour dates yet. check back soon — the next wave is coming.</p>
+                <a href="https://open.spotify.com/artist/5069JTmv5ZDyPeZaCCXiCg?si=-lII4fzqTem0DQsT-7Iqtg" target="_blank" rel="noopener noreferrer" class="tour-notify-btn">follow on spotify</a>
+            </div>
+        </section>
+
+        <section id="fan-thoughts">
+            <div class="section-header">
+                <span class="section-tag">community</span>
+                <h2>fan thoughts</h2>
+                <p>Share what wave to earth means to you.</p>
+            </div>
+            <div class="fan-form">
+                <div class="fan-form-row">
+                    <input type="text" id="fan-name" class="fan-input" placeholder="your name (optional)" maxlength="40">
+                    <button class="fan-submit" onclick="submitComment()">post ↗</button>
+                </div>
+                <textarea id="fan-message" class="fan-textarea" placeholder="leave a message for the wave…" maxlength="300" rows="3"></textarea>
+                <div class="fan-char-count"><span id="charCount">0</span>/300</div>
+            </div>
+            <div class="fan-wall" id="fanWall">
+                <div class="fan-card">
+                    <div class="fan-card-header">
+                        <span class="fan-avatar">🌊</span>
+                        <div><span class="fan-name">fake guy123</span><span class="fan-time">Feb 20, 2026</span></div>
+                    </div>
+                    <p class="fan-message">"bad" came on shuffle during a really hard week and honestly it felt like someone understood exactly what I needed to hear. thank you daniel 🥹</p>
+                </div>
+                <div class="fan-card">
+                    <div class="fan-card-header">
+                        <span class="fan-avatar">🌿</span>
+                        <div><span class="fan-name">james austria</span><span class="fan-time">Feb 22, 2026</span></div>
+                    </div>
+                    <p class="fan-message">flaws and all is a perfect album. every single track. not one skip. rare.</p>
+                </div>
+                <div class="fan-card">
+                    <div class="fan-card-header">
+                        <span class="fan-avatar">☁️</span>
+                        <div><span class="fan-name">anonymous</span><span class="fan-time">Feb 24, 2026</span></div>
+                    </div>
+                    <p class="fan-message">peach eyes sounds like the feeling of sunlight coming through curtains on a slow morning. how do they do it</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">wave to earth</div>
+            <p>fan-made site for wave to earth · not affiliated with the band, by samantha lopez</p>
+            <p class="footer-copy">© 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
